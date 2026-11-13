@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="KinhDiTrung Studio - AI-powered narration,
+        audiobook production, video creation and
+        publishing workflow for Windows.">
+
+  <title>KinhDiTrung Studio | AI Content Production</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --surface: #111b2d;
+      --border: #26364d;
+      --text: #f2f6ff;
+      --muted: #a0afc5;
+      --accent: #37c9ff;
+      --purple: #9877ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          ellipse at 80% 0%,
+          #183c65 0%,
+          transparent 42%
+        ),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 22px 7%;
+      border-bottom: 1px solid var(--border);
+      background: #080d18dd;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 105px 20px 85px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 17px;
+      border: 1px solid #28658d;
+      border-radius: 30px;
+      color: var(--accent);
+      background: #12304b;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 1.13;
+      margin: 28px 0;
+      letter-spacing: -2px;
+    }
+
+    .gradient {
+      background: linear-gradient(
+        100deg,
+        var(--accent),
+        var(--purple)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
+    .primary {
+      background: linear-gradient(
+        120deg,
+        #16b8f5,
+        #7771ff
+      );
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid var(--border);
+      color: white;
+      background: #162236;
+    }
+
+    section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 65px 24px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: linear-gradient(
+        150deg,
+        #152238,
+        #0e1727
+      );
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 29px;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .symbol {
+      font-size: 30px;
+    }
+
+    .workflow {
+      text-align: center;
+      padding: 35px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .workflow strong {
+      color: var(--accent);
+    }
+
+    .platform {
+      text-align: center;
+      background: #111b2d;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 25px;
+    }
+
+    .platform p {
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      background: #070b13;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 70px 20px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      KinhDiTrung <span>Studio</span>
+    </div>
+
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#platform">Platform</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero">
+      <div class="tag">
+        WINDOWS DESKTOP APPLICATION
+      </div>
+
+      <h1>
+        Create Stories.<br>
+        Generate Audio.<br>
+        <span class="gradient">Produce Videos.</span>
+      </h1>
+
+      <p>
+        KinhDiTrung Studio is an AI-assisted
+        desktop production workspace for
+        long-form narration, text-to-speech,
+        audio processing, video rendering
+        and publishing workflow management.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#features">
+          Explore Features
+        </a>
+
+        <a class="btn secondary" href="#platform">
+          About the Application
+        </a>
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="section-heading">
+        <h2>Powerful Creative Tools</h2>
+        <p>
+          A unified workflow for producing
+          narrated digital content.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="symbol">📚</div>
+          <h3>Story Management</h3>
+          <p>
+            Organize long-form storytelling
+            projects, chapters and source files.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🎙️</div>
+          <h3>AI Text-to-Speech</h3>
+          <p>
+            Convert text into narration audio
+            with configurable voice engines.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🌐</div>
+          <h3>Translation Workflow</h3>
+          <p>
+            Prepare multilingual narration
+            projects through translation tools.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🎬</div>
+          <h3>Video Production</h3>
+          <p>
+            Combine audio, visuals and subtitles
+            into rendered video projects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">📂</div>
+          <h3>Batch Processing</h3>
+          <p>
+            Manage multiple chapters and
+            production tasks in organized queues.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🚀</div>
+          <h3>Publishing Integration</h3>
+          <p>
+            Support publishing workflows for
+            authorized social media accounts,
+            subject to platform permissions.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="section-heading">
+        <h2>Production Workflow</h2>
+        <p>
+          From source content to
+          finished video production.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <strong>Import</strong>
+        &nbsp; → &nbsp;
+        <strong>Translate</strong>
+        &nbsp; → &nbsp;
+        <strong>Generate Audio</strong>
+        &nbsp; → &nbsp;
+        <strong>Render Video</strong>
+        &nbsp; → &nbsp;
+        <strong>Publish</strong>
+      </div>
+    </section>
+
+    <section id="platform">
+      <div class="platform">
+        <h2>Built for Windows</h2>
+
+        <p>
+          KinhDiTrung Studio is designed as
+          a Windows desktop application,
+          including portable distribution.
+        </p>
+
+        <p>
+          The application supports local
+          content production workflows.
+          Optional third-party integrations
+          require user authorization.
+        </p>
+
+        <p>
+          Social media publishing features
+          depend on platform API availability,
+          permissions and approval.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+
+    <p>
+      Developer contact:
+      <a href="mailto:mxmxnznxnxn1@gmail.com">
+        mxmxnznxnxn1@gmail.com
+      </a>
+    </p>
+
+    <p>
+      © 2026 KinhDiTrung Studio.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
